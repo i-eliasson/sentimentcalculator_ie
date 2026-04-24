@@ -6,8 +6,10 @@ format_text <- function() {
   df <- data.frame(text = df$text)
   #make all words lowercase
   df$text <- tolower(df$text)
-  print(df)
   #make all words into separate characters
   words <- unlist(strsplit(gsub("[[:punct:]]", "", tolower(df$text)), "\\s+"))
+  words <- wordStem(words)
   return(words)
 }
+
+format_text()

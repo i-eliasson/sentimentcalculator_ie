@@ -4,15 +4,15 @@ sentiment_results<-function(counts) {
   negative <- counts$negative
   #compare number of negative and positive words to get a final output
   sentiment <- if (positive > negative) {
-    "positive"
+    "This text is positive :)"
   } else if (negative > positive) {
-    "negative"
+    "This text is negative :("
   } else {
-    "neutral"
+    "This text is neutral :I"
   }
 
-  cat("Positive words:", positive, "\n")
-  cat("Negative words:", negative, "\n")
+  cat("Positive word count:", positive, "\n")
+  cat("Negative word count:", negative, "\n")
 
   return(sentiment)
 }
