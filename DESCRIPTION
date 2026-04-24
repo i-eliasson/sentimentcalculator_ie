@@ -1,0 +1,17 @@
+Package: sentimentcalculator
+Type: Package
+Title: A package for analyzing the sentiment of a text
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Isabelle", "Eliasson",
+      email = "isabelle.eliasson@ki.se",
+      role = c("aut", "cre")
+    )
+  )
+Description: This package will hep you decide whether the sentiment of a text is positive, negative or neutral. 
+    The package calculates a sentiment score by analyzing keywords, which helps determine the meaning of the text. 
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.3
