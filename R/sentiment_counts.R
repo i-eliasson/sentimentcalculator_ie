@@ -1,51 +1,51 @@
+#' Count positive and negative words in text
+#'
+#' Calculates how many words in a cleaned text vector match
+#' predefined positive and negative sentiment lexicons.
+#'
+#' @param words A character vector of words created using format_text()
+#'
+#' @return A list containing the number of positive and negative words
+#'
+#' @examples
+#' \dontrun{
+#' pos_neg_count <- sentiment_counts(string_vector)
+#' }
+
 sentiment_counts <- function(words) {
 
-  #A vector for 100 most common positive words, stems
-  positive_words <- c(
-    "good","great","best","better","excellent","amazing","awesome","fantastic","happy","happi",
-    "love","lov","like","enjoy","enjoyabl","joy","joyful","wonderful","brilliant","positive",
-    "pleased","proud","strong","success","successful","win","winner","won","beautiful","nice",
-    "perfect","fine","calm","peace","peaceful","hope","hopeful","help","helpful","kind",
-    "kindness","friendly","support","supportive","thank","thanks","thankful","relief","relieved",
-    "excited","exciting","optimistic","bright","cheerful","delight","delighted","satisfi",
-    "satisfied","content","glad","lucky","fortunate","encourag","encouraged","improv","improved",
-    "progress","gain","growth","grow","active","activ","energ","energized","energy","motivat",
-    "motivated","inspir","inspired","inspiring","achieve","achievement","accomplish","advance",
-    "advanc","engag","engaged","clarity","clear","focus","focused","relax","relaxed","stable",
-    "stability","safe","trust","trusting","trustworthy","respect","respected","care","caring",
-    "warm","warmth","grace","graceful","serene","serenity","harmony","harmoni","balance","balanced",
-    "victory","victor","uplift","uplifting","shine","shining","spark","sparkling","refresh","refreshed",
-    "revive","revived","thrive","thriving","bless","blessed","reward","rewarding","progression",
-    "improving","advance","advancement","skill","skilled","talent","talented","capable","ability",
-    "brav","brave","courage","courageous","determined","determination","dedicat","dedicated",
-    "loyal","loyalty","honest","honesty","faith","faithful","incredible","incredibl","extraordinary",
-    "extraordinar","superb","spectacular","remarkable","outstand","outstanding"
+  #A vector for 100 most common positive words, with word stems
+  positive_words <- positive_words <- c(
+    "good","great","excel","amaz","awesom","fantast","wonder","brilliant","superb","outstand",
+    "perfect","nice","pleasant","love","beauti","charm","delight","enjoy","fun","happi",
+    "joy","cheer","glad","content","satisfi","pleas","grate","thank","optimist","hope",
+    "posit","encourag","inspir","motivat","uplift","excit","thrill","impress","remark","incred",
+    "success","effect","effici","product","benefici","valu","use","help","support","reliabl",
+    "trust","honest","loyal","kind","friend","generous","care","compassion","warm","welcom",
+    "peace","calm","relax","comfort","safe","secur","stabl","balanc","harmoni","bright",
+    "clear","focus","confid","strong","capabl","skill","talent","creativ","smart","intellig",
+    "wise","determin","dedic","ambit","driven","energet","activ","live","vibrant","refresh",
+    "reward","fulfil","meaning","fortun","lucki","bless","grace","eleg","radiant","shine"
   )
 
-  # A vector for the 100 most common negative words
+  #A vector for the 100 most common negative words, with word stems
   negative_words <- c(
-    "bad","wors","worst","terribl","awful","horribl","hate","hat","sad","sadd",
-    "angr","anger","annoy","annoyed","frustrat","stress","stressed","stressful","tired","exhaust",
-    "burnout","bore","boring","pain","painful","hurt","hurting","sick","ill","dizzy","fear",
-    "fearful","panic","panick","anxiou","anxiety","worri","worrying","depress","depressed",
-    "depression","lonel","alone","isol","isolat","loss","lost","fail","failed","failure",
-    "problem","problems","troubl","issue","difficult","difficulty","hard","harsh","rough",
-    "weak","weakness","danger","dangerous","threat","threaten","ugli","gross","disgust",
-    "disgusting","negative","unhappi","sadness","hopeless","helpless","helplessness","damag",
-    "damaged","destroy","destroyed","broken","break","crash","collaps","collapse","reject",
-    "rejected","regret","suffer","suffering","miserabl","miserable","upset","upsetting",
-    "cold","cruel","evil","toxic","ruin","ruined","declin","decline","losses","overwhelm",
-    "overwhelmed","confus","confused","empti","empty","bother","bothered","lame","stupid",
-    "useless","worthless","inferior","insecure","unstabl","mess","messy","chaos","chaotic",
-    "drain","drained","nervou","tense","tension","painful","stressful","frustrating",
-    "annoying","irritat","irritated","exhausted","exhausting","brokenhearted","hopelessness",
-    "isolation","loneliness","fearful","worried","regretful","sadness","failure","failur",
-    "collapse","damage","ruination"
+    "bad","wors","worst","awful","terribl","horribl","poor","negat","unpleasant","disappoint",
+    "sad","angr","upset","depress","unhappi","miser","lonel","hopeless","helpless","worri",
+    "anxiou","nervou","afraid","scare","fear","stress","overwhelm","tire","exhaust","drain",
+    "frustrat","annoy","irritat","bore","confus","lost","insecure","uncertain","doubt","pessimist",
+    "hate","dislik","resent","bitter","jealous","enviou","hostil","rude","mean","cruel",
+    "selfish","greedi","lazi","careless","reckless","weak","useless","worthless","inferior","inadequ",
+    "fail","broken","damag","ruin","destroy","problem","troubl","issu",
+    "difficult","hard","challeng","pain","harm","danger","risk","unsafe","toxic",
+    "dirt","mess","chaos","noisi","dull","slow","late","wrong","fault",
+    "ugli","gross","disgust","offens","unfair","unjust","unlucki","unfortun","regret","guilt"
   )
 
-  #comparing the number of matching positive words with our text
+
+  #comparing the number of matching positive words with the character vector from the input
   pos_count <- sum(words %in% positive_words)
-  #comparing the number of matching negative words with our text
+  #comparing the number of matching negative words with the character vector from the input
   neg_count <- sum(words %in% negative_words)
 
   return(list(
@@ -53,4 +53,3 @@ sentiment_counts <- function(words) {
     negative = neg_count
   ))
 }
-
