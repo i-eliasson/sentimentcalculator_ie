@@ -2,21 +2,10 @@ Package: sentimentcalculator
 Type: Package
 Title: A package for analyzing the true meaning of a text
 Version: 0.1.0
-Authors@R: c(
-    person(
-      "Isabelle", "Eliasson",
-      email = "isabelle.eliasson@ki.se",
-      role = c("aut", "cre")
-    )
-  )
-Description: This package will help you decide whether the sentiment of a text is positive, negative or neutral. 
-    The package calculates a sentiment score by analyzing keywords, which helps determine the meaning of the text. 
-    
-    The functions have been designed to be run in the following order
-    format_text() -> sentiment_counts() -> sentiment_results()
-    
-    This package uses the SnowballC package for word stemming.
-  
+Authors@R: person("Isabelle", "Eliasson",
+                  email = "isabelle.eliasson@ki.se",
+                  role = c("aut", "cre"))
+Description: This package helps determine whether the sentiment of a text is positive, negative or neutral by analyzing keyword sentiment. The functions are designed to be used in the following order: format_text -> sentiment_counts -> sentiment_results. This package uses the SnowballC package for word stemming.
 License: MIT
 Encoding: UTF-8
 LazyData: true
